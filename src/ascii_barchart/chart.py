@@ -1,4 +1,5 @@
 from rich.console import Console
+import sys
 
 
 def scale_bar(value, maximum, width=40):
@@ -8,7 +9,7 @@ def scale_bar(value, maximum, width=40):
 
 
 def render_bar_chart(values, width=40):
-    console = Console()
+    console = Console(file=sys.stdout, force_terminal=False)
     colors = ["cyan", "green", "yellow", "magenta"]
 
     if not values:
